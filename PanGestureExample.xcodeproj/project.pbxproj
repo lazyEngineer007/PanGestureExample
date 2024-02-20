@@ -19,6 +19,7 @@
 		21C20F502B84C42E00168EAA /* PanGestureExampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C20F4F2B84C42E00168EAA /* PanGestureExampleUITestsLaunchTests.swift */; };
 		21C20F5E2B84C5E600168EAA /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C20F5C2B84C5E600168EAA /* HomeTableViewCell.swift */; };
 		21C20F5F2B84C5E600168EAA /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21C20F5D2B84C5E600168EAA /* HomeTableViewCell.xib */; };
+		21C20F632B8517B800168EAA /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C20F622B8517B800168EAA /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		21C20F4F2B84C42E00168EAA /* PanGestureExampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanGestureExampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		21C20F5C2B84C5E600168EAA /* HomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		21C20F5D2B84C5E600168EAA /* HomeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
+		21C20F622B8517B800168EAA /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				21C20F372B84C42E00168EAA /* LaunchScreen.storyboard */,
 				21C20F3A2B84C42E00168EAA /* Info.plist */,
 				21C20F322B84C42C00168EAA /* PanGestureExample.xcdatamodeld */,
+				21C20F622B8517B800168EAA /* ViewModel.swift */,
 			);
 			path = PanGestureExample;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				21C20F5E2B84C5E600168EAA /* HomeTableViewCell.swift in Sources */,
 				21C20F2E2B84C42C00168EAA /* ViewController.swift in Sources */,
 				21C20F2A2B84C42C00168EAA /* AppDelegate.swift in Sources */,
+				21C20F632B8517B800168EAA /* ViewModel.swift in Sources */,
 				21C20F2C2B84C42C00168EAA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
