@@ -4,10 +4,9 @@ import UIKit
 class ViewController: UIViewController {
     
     private lazy var panGestureRecognizer: UIPanGestureRecognizer = {
-           let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture(_:)))
-           return panGestureRecognizer
-       }()
-    
+        let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture(_:)))
+        return panGestureRecognizer
+    }()
     private var initialTableViewY: CGFloat = 0
     var maxTableViewY : CGFloat = 0
     var minTableViewY : CGFloat  = 0
@@ -16,12 +15,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupView()
         view.addGestureRecognizer(panGestureRecognizer)
     }
     
-   private func setupView(){
+    private func setupView(){
         tableView.register(UINib(nibName: "HomeTableViewCell", bundle: nil), forCellReuseIdentifier: "HomeTableViewCell")
         tableView.delegate = self
         tableView.dataSource = self
@@ -31,10 +29,10 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         initialTableViewY = tableView.frame.origin.y
-                maxTableViewY = initialTableViewY
-                minTableViewY = navBar.frame.origin.y
+        maxTableViewY = initialTableViewY
+        minTableViewY = navBar.frame.origin.y
     }
-
+    
 }
 
 
@@ -51,31 +49,30 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource{
 extension ViewController{
     
     @objc private func handlePanGesture(_ gestureRecognizer: UIPanGestureRecognizer) {
-           let translation = gestureRecognizer.translation(in: view)
+        let translation = gestureRecognizer.translation(in: view)
         print(translation.y)
-           switch gestureRecognizer.state {
-           case .began, .changed:
-               let newTableViewY = tableView.frame.origin.y + translation.y
-               print(minTableViewY, " - " ,newTableViewY,  " - " ,maxTableViewY)
-               
-               tableView.frame.origin.y = max(min(newTableViewY, maxTableViewY), minTableViewY)
-//               tableView.setNeedsDisplay()
-//               tableView.layoutIfNeeded()
-               
-               if newTableViewY <= minTableViewY {
-                   tableView.isScrollEnabled = true
-               } else {
-                   tableView.isScrollEnabled = false
-               }
-               
-               gestureRecognizer.setTranslation(.zero, in: view)
-           case .ended:
-               
-               // Perform any final adjustments or animations
-               break
-           default:
-               break
-           }
-       }
+        switch gestureRecognizer.state {
+        case .began, .changed:
+            let newTableViewY = tableView.frame.origin.y + translation.y
+            print(minTableViewY, " - " ,newTableViewY,  " - " ,maxTableViewY)
+            
+            tableView.frame.origin.y = max(min(newTableViewY, maxTableViewY), minTableViewY)
+            //               tableView.setNeedsDisplay()
+            //               tableView.layoutIfNeeded()
+            
+            if newTableViewY <= minTableViewY {
+                tableView.isScrollEnabled = true
+            } else {
+                tableView.isScrollEnabled = false
+            }
+            
+            gestureRecognizer.setTranslation(.zero, in: view)
+        case .ended:
+            // Perform any final adjustments or animations
+            break
+        default:
+            break
+        }
+    }
     
 }
